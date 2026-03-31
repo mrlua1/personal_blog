@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>我的个人博客</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo" onclick="showPage('home')">✍️ 我的博客</a>
+      <nav class="nav">
+        <a href="#" onclick="showPage('home')">首页</a>
+        <a href="#" onclick="showPage('about')">关于</a>
+      </nav>
+      <div class="header-actions">
+        <input type="text" id="searchInput" class="search-box" placeholder="搜索文章…" oninput="handleSearch()" />
+        <button class="theme-toggle" id="themeToggle" title="切换主题" onclick="toggleTheme()">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Main ===== -->
+  <main class="container main-layout">
+
+    <!-- ——— Home / Post List ——— -->
+    <section id="page-home">
+      <div class="posts-area">
+        <div id="postList" class="post-list"></div>
+        <p id="noResult" class="no-result hidden">没有找到相关文章。</p>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="widget">
+          <h3 class="widget-title">关于博主</h3>
+          <div class="about-mini">
+            <div class="avatar">👤</div>
+            <p>热爱技术与生活，记录所思所想。</p>
+          </div>
+        </div>
+
+        <div class="widget">
+          <h3 class="widget-title">分类</h3>
+          <ul class="category-list" id="categoryList"></ul>
+        </div>
+
+        <div class="widget">
+          <h3 class="widget-title">标签云</h3>
+          <div class="tag-cloud" id="tagCloud"></div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ——— Single Post ——— -->
+    <section id="page-post" class="hidden full-width">
+      <button class="back-btn" onclick="showPage('home')">← 返回列表</button>
+      <article id="postDetail" class="post-detail"></article>
+    </section>
+
+    <!-- ——— About Page ——— -->
+    <section id="page-about" class="hidden full-width">
+      <article class="post-detail">
+        <h1>关于我</h1>
+        <div class="post-meta">用心记录，用文字留存</div>
+        <div class="post-content">
+          <p>你好！我是这个博客的主人。</p>
+          <p>这里是我分享技术心得、生活感悟以及各种有趣想法的地方。喜欢用文字记录生活中那些值得珍藏的瞬间。</p>
+          <p>如果你有任何想法或建议，欢迎通过以下方式联系我：</p>
+          <ul>
+            <li>📧 email@example.com</li>
+            <li>🐙 GitHub: github.com/example</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2024 我的个人博客 &nbsp;·&nbsp; 用 ❤️ 和纯原生 HTML/CSS/JS 构建</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
